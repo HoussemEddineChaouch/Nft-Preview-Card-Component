@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 ;
+}
+:root {
+    --color-Soft-blue : hsl(215, 51%, 70%) ; 
+    --color-Cyan: hsl(178, 100%, 50%) ; 
+    --color-Very-dark-blue-main-BG : hsl(217, 54%, 11%) ; 
+    --color-Very-darkblue-card-BG : hsl(216, 50%, 16%) ;
+    --color-Very-dark-blue-line: hsl(215, 32%, 27%) ;
+    --color-White: hsl(0, 0%, 100%) ;
+    --main-transition : 0.3s ;
+}
+body {
+    background-color: var(--color-Very-dark-blue-main-BG);
+    font-family: 'Outfit', sans-serif;
+    font-size:  18px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.component {
+  background-color: var(--color-Very-darkblue-card-BG);
+  border-radius: 10px;
+  padding: 20px;
+  width: 375px;
+
+}
+.component .box-image {
+    position: relative;
+    cursor: pointer;
+}
+.component .box-image::before {
+    font-family: 'Font Awesome 6 Free';
+    content: "\f06e";
+    position: absolute;
+    font-size: 50px;
+    top: 50%;
+    left: 50%;
+    color: white;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50% , -50%);
+    transition: var(--main-transition);
+}
+.component .box-image::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 3px);
+    top: 0;
+    left: 0;
+    background-color: hsl(178, 100%, 50% );
+    opacity: 0;
+    border-radius: 10px;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.component .box-image:hover::before {
+   opacity: 100%;
+}
+.component .box-image:hover::after {
+    opacity: 30%;
+}
+.component .box-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.component .content .text {
+    padding: 20px 0;
+}
+.component .content .text h2 {
+    color: white;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-size: 25px;
+    margin: 0 ; 
+}
+.component .content .text h2:hover {
+  color: var(--color-Cyan);
+}
+.component .content .text p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    margin-top: 15px;
+    color: var(--color-Soft-blue);
+}
+.component .content .pric-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.component .content .pric-content .pric ,
+.component .content .pric-content .days {
+    display: flex;
+    align-items: center;
+}
+.component .content .pric-content .pric img ,
+.component .content .pric-content .days img {
+    margin-right: 7px;
+}
+.component .content .pric-content .pric h4 ,
+.component .content .pric-content .days h4 {
+    font-size: 15px;
+}
+.component .content .pric-content .pric h4 {
+    color: var(--color-Cyan);
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+.component .content .pric-content .days h4 {
+    color: var(--color-Soft-blue);
+    font-weight: 300;
+}
+.component .content .profil {
+    display: flex;
+    align-items: center;
+    padding: 20px 0 10px;
+    position: relative;
+}
+.component .content .profil::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+    background-color: var(--color-Very-dark-blue-line);
+}
+.component .content .profil img {
+    width: 40px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-right: 15px;
+}
+.component .content .profil p {
+    color: var(--color-Soft-blue);
+    font-size: 17px;
+    font-weight: 300;
+    text-transform: capitalize;
+    word-spacing: 1.6px;
+}
+.component .content .profil p span {
+    color: white ;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.component .content .profil p span:hover {
+    color: var(--color-Cyan);
+}
+
